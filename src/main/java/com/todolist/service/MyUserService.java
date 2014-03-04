@@ -12,6 +12,6 @@ public interface MyUserService{
 	
 	public MyUser delete(int id);
 	
-	public List<MyUser> getAllMyUser();
+	public List<MyUser>getAllMyUser();
 	
 }

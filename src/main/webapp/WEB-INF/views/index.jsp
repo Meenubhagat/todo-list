@@ -9,10 +9,10 @@
 <body>
 <h1>Home page</h1>
 <p>
-Welcome to "Shop application".<br/>
+Welcome to "Todo application".<br/>
 <i>${message}</i><br/>
-<a href="${pageContext.request.contextPath}/shop/create.html">Create a new shop</a><br/>
-<a href="${pageContext.request.contextPath}/shop/list.html">View all shops</a><br/>
+<a href="${pageContext.request.contextPath}/todo/create.html"><b>Todo List Page</b></a><br/>
+<a href="${pageContext.request.contextPath}/todo/list.html"><b>User List</b></a><br/>
 </p>
 </body>
 </html>

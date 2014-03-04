@@ -58,11 +58,11 @@ public class Todo {
 		this.status = status;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -80,5 +80,5 @@ public class Todo {
     public String status;
 	
 	@Column(name="date")
-    public Date date;
+    public String date;
 }

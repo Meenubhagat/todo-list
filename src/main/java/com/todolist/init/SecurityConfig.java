@@ -36,6 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	    .authorizeRequests()
 	    .antMatchers("/todo/**").permitAll()
 	    .antMatchers("/myuser/**").permitAll()
+	    .antMatchers("/**").permitAll()
 	    .anyRequest().authenticated()
 	    .and()
 	    .logout()
@@ -44,6 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	    .formLogin()
 	    .loginPage("/login") 
 	    .permitAll();
+	   
 	     
     http.exceptionHandling().accessDeniedHandler(hl);
      

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.todolist.exception.TodoNotFound;
 import com.todolist.model.Todo;
 import com.todolist.repository.TodoRepository;
 import com.todolist.service.ToDoService;
@@ -44,6 +45,12 @@ public class ToDoServiceImpl implements ToDoService {
 	@Override
 	public List<Todo> getAllTodo() {
 		return (List<Todo>) todoRepository.findAll(); //To fetch data from the database and return its lists.
+	}
+
+	@Override
+	public Todo update(Todo todo) throws TodoNotFound {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
