@@ -55,7 +55,9 @@ ${m.qualification}
  ${m.dateofbirth }
 </td>
  <td>
- <button type="button" class="btn btn-success btn-lg">Edit</button>
+ <button type="button" class="btn btn-success btn-lg">
+ <a href="${pageContext.request.contextPath}/myuser/edit/${m.id}">Edit</a>
+ </button>
   <button type="button" class="btn btn-danger btn-lg">Delete</button>
  </td>
  </tr>
