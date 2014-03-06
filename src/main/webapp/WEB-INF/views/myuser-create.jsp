@@ -10,33 +10,38 @@
 </head>
 <body>
 <form class="form-horizontal" action="save" method="post">  
-        <fieldset>  
-          <legend>Spring data Bootstrap MyUser example</legend>  <br>
+    <fieldset>  
+      <legend>Spring data Bootstrap MyUser example</legend><br>
   <div class="form-group">
-    <label for="inputtaskname" class="col-sm-2 control-label">User Name</label>
+  <label for="inputtaskname" class="col-sm-2 control-label">User Name</label>
     	<div class="col-xs-4">
-     	 <input type="text" class="form-control" id="user_name" name="user_name">
+     	 <input type="text" class="form-control" id="user_name" name="user_name" value="${myuser.name}">
    		 </div>
   </div>
   	<div class="form-group">
-    	<label for="inputtaskdesc" class="col-sm-2 control-label">User Address</label>
-    		<div class="col-xs-4">
-      			<textarea class="form-control" rows="3" id="user_Address" name="user_Address"></textarea>
-    		</div>
-  	</div>
-  <div class="form-group">
-    <label for="inputstatus" class="col-sm-2 control-label">User Status</label>
+    <label for="inputtaskdesc" class="col-sm-2 control-label">User Address</label>
     	<div class="col-xs-4">
-      	<div class="radio">
-  			<label>
-   			 <input type="radio" value="Single" checked id="user_status" name="user_status">
-   				Single
-  			</label>
-		</div>
+      	<textarea class="form-control" rows="3" id="user_Address" name="user_Address">${myuser.address}</textarea>
+    	</div>
+  	</div>
+ 		 <div class="form-group">
+   		 <label for="inputstatus" class="col-sm-2 control-label">User Status</label>
+    		<div class="col-xs-4">
+      		<div class="radio">
+  		<label>
+   		<input type="radio" value="Single" checked id="user_status" name="user_status" 
+   			<c:if test="${myuser.status.equals(\"Single\")}">
+   			checked
+   	 		</c:if>>Single
+  		</label>
+			</div>
 	<div class="radio">
  	 <label>
-    	<input type="radio" value="Married" checked id="user_status" name="user_status">
-    		Married
+    	<input type="radio" value="Married" checked id="user_status" name="user_status" 
+    	 <c:if test="${myuser.status.equals(\"Married\")}">
+   		checked
+   	 </c:if>>Married
+   	 
   	</label>
 	</div>
    	 </div>
@@ -45,10 +50,21 @@
     <label for="inputPriority" class="col-sm-2 control-label">User Qualification</label>
     	<div class="col-xs-4">
      	<select class="form-control" id="user_qualification" name="user_qualification">
-  			<option>Matriculation</option>
-  			<option>Senior Secondary</option>
-  			<option>Graduation</option>
-  			 <option>Post Graduation</option>
+  			<option <c:if test="${myuser.qualification.equals(\"Matriculation\")}">
+   		selected
+   	 </c:if>>Matriculation</option>
+   	 
+  			<option <c:if test="${myuser.qualification.equals(\"Senior Secondary\")}">
+   		selected
+   	 </c:if>>Senior Secondary</option>
+   	 
+  			<option <c:if test="${myuser.qualification.equals(\"Graduation\")}">
+   		selected
+   	 </c:if>>Graduation</option>
+   	 
+  			 <option <c:if test="${myuser.qualification.equals(\"Post Graduation\")}">
+   		selected
+   	 </c:if>>Post Graduation</option>
 		</select>
    		 </div>
   </div><br>
