@@ -36,7 +36,9 @@ public class RegisterController {
 	public ModelAndView saveRegister(){
 		System.out.println(request.getParameter("user_name"));
 		System.out.println(request.getParameter("user_password"));
-		System.out.println(request.getParameter("user_fullname"));
+		System.out.println(request.getParameter("user_firstname"));
+		System.out.println(request.getParameter("user_middlename"));
+		System.out.println(request.getParameter("user_lastname"));
 		System.out.println(request.getParameter("user_address"));
 		System.out.println(request.getParameter("user_country"));
 		System.out.println(request.getParameter("user_zipcode"));
@@ -53,13 +55,15 @@ public class RegisterController {
 		Register register = new Register();
 		register.setName(request.getParameter("user_name"));
 		register.setPassword(request.getParameter("user_password"));
-		register.setFullname(request.getParameter("user_fullname"));
+		System.out.println(request.getParameter("user_firstname"));
+		System.out.println(request.getParameter("user_middlename"));
+		System.out.println(request.getParameter("user_lastname"));
 		register.setAddress(request.getParameter("user_address"));
 		register.setCountry(request.getParameter("user_country"));
 		register.setZipcode(request.getParameter("user_zipcode"));
 		register.setEmail(request.getParameter("user_email"));
 		register.setGender(request.getParameter("user_gender"));
-		register.setLanguage(request.getParameter("user_language"));
+		register.setLanguage(request.getParameter("language"));
 		register.setAbout(request.getParameter("about"));
 		register.setDate("date");
 		register.setStatus(request.getParameter("relationshipstatus"));
@@ -67,12 +71,7 @@ public class RegisterController {
 		register.setPlan(request.getParameter("plan"));
 		register.setThings(request.getParameter("things"));
 		register.setEducationlevel(request.getParameter("educationlevel"));
-		
-				
-		
-		
-		//registerService.create(register);
-		
+		registerService.create(register);
 		return new ModelAndView(new RedirectView("registerlist"));
 	}
 	

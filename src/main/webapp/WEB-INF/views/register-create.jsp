@@ -31,20 +31,20 @@
     <div class="form-group">
       <label for="fullName" class="col-sm-2 control-label">User Full Name</label>
        <div class="col-sm-2">
-        <input type="firstname" class="form-control" id="inputName" placeholder="FirstName" name="user_fullname">
+        <input type="firstname" class="form-control" id="inputName" placeholder="FirstName" name="user_firstname">
        </div>
         <div class="col-sm-2">
-          <input type="middlename" class="form-control" id="inputName" placeholder="MiddleName" name="user_fullname">
+          <input type="middlename" class="form-control" id="inputName" placeholder="MiddleName" name="user_middlename">
         </div>
          <div class="col-sm-2">
-          <input type="lastname" class="form-control" id="inputName" placeholder="user_fullname">
+          <input type="lastname" class="form-control" id="inputName" placeholder="LastName" name="user_lastname">
          </div>
      </div>
      
      <div class="form-group">
     	<label for="inputaddress" class="col-sm-2 control-label">User Address</label>
     	  <div class="col-xs-4">
-      		 <textarea class="form-control" rows="3" id="user_Address" name="user_Address" placeholder="Address"></textarea>
+      		 <textarea class="form-control" rows="3" id="user_Address" name="user_address" placeholder="Address"></textarea>
     	  </div>
    	 </div>
   	

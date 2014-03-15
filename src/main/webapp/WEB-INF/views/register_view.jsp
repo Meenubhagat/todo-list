@@ -18,7 +18,6 @@
 	<table class="table table-bordered">
  	<tr>
  		<td><b>Name</b></td>
- 		<td><b>Password</b></td>
  		<td><b>Full Name</b></td>
  		<td><b>Address</b></td>
  		<td><b>Country</b></td>
@@ -26,11 +25,33 @@
  		<td><b>Email Address</b></td>
  		<td><b>Gender</b></td>
  		<td><b>Language</b></td>
- 		<td><b>Date of Birth</b></td>
+ 		<td><b>Dateofbirth</b></td>
  		<td><b>Education Level</b></td>
  		<td><b>Action</b></td>
  		
  	</tr>
+ 	
+ 	<c:forEach items="${requestScope.register}" var="r">
+  	<tr>
+	 <td>${r.name}</td>
+	 <td>${r.fullname}</td>
+	 <td>${r.address }</td>
+	 <td>${r.country }</td>
+	 <td>${r.zipcode}</td>
+	 <td>${r.email }</td>
+	 <td>${r.gender }</td>
+	 <td>${r.language }</td>
+ 	<td>${r.date }</td>
+ 	<td>${r.educationlevel }</td>
+ 	
+ 	<td>
+ 	<button type="button" class="btn btn-success btn-lg">
+ 	Edit
+ 	</button>
+  		<button type="button" class="btn btn-danger btn-lg">Delete</button>
+ 	</td>
+ 	</tr>
+ 	</c:forEach>
  				</table>
 	</body>
 </html>
