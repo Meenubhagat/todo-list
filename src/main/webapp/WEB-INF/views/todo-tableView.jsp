@@ -12,50 +12,30 @@
 </head>
 <body>
 <center><h1>Spring data Bootstrap Todo example</h1></center>
-<button type="button" class="btn btn-success btn-lg"> Add New</button>
+<button type="button" class="btn btn-success btn-lg">
+<a href="${pageContext.request.contextPath}/todo/create">
+ Add New</a></button>
 <table class="table table-bordered">
  <tr>
- <td>
-<b>Task Name</b>
- </td>
- <td>
-<b>Task Description</b>
- </td>
- <td>
- <b>Task Status</b>
- </td>
- <td>
- <b>Task priority</b>
- </td>
- <td>
- <b>Task Date</b>
- </td>
- <td>
- <b>Action</b>
- </td>
+ 	<td><b>Task Name</b></td>
+	 <td><b>Task Description</b></td>
+	 <td><b>Task Status</b></td>
+ 	<td><b>Task priority</b></td>
+ 	<td><b>Task Date</b></td>
+ 	<td><b>Action</b></td>
  </tr>
  
  <c:forEach items="${requestScope.todos}" var="t">
   <tr>
- <td>
-${t.title }
-</td>
- <td>
-${t.desc }
-</td>
- <td>
-${t.status }
-</td>
-<td>
-${t.priority}
-</td>
- <td>
- ${t.date }
-</td>
- <td>
- <button type="button" class="btn btn-success btn-lg">Edit</button>
-  <button type="button" class="btn btn-danger btn-lg">Delete</button>
- </td>
+ 	<td>${t.title }</td>
+ 	<td>${t.desc }</td>
+ 	<td>${t.status }</td>
+	<td>${t.priority}</td>
+ 	<td>${t.date }</td>
+ 	<td><button type="button" class="btn btn-success btn-lg">
+ 	<a href="${pageContext.request.contextPath}/todo/edit/${t.id}">Edit</button>
+  	<button type="button" class="btn btn-danger btn-lg">Delete</button>
+ 	</td>
  </tr>
  </c:forEach>
   

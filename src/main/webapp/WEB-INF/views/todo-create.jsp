@@ -11,8 +11,8 @@
 </head>
 <body>
 
-<form class="form-horizontal" method="post" action="save">  
-        <fieldset>  
+						<form class="form-horizontal" method="post" action="save">  
+						        <fieldset>  
           <legend>Spring data Bootstrap Todo example</legend>  <br>
   <div class="form-group">
     <label for="inputtaskname" class="col-sm-2 control-label">Task Name</label>

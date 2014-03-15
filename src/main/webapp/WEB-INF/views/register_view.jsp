@@ -10,36 +10,27 @@
 					<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<center><h1>Spring data Bootstrap MyUser example</h1></center>
+		<center><h1> Registration Data View </h1></center>
 			<button type="button" class="btn btn-success btn-lg">
-			<a href="${pageContext.request.contextPath}/myuser/createmyuser">
-			 <b>Add New</b></a>
+			
+			 <b>Add New</b>
 			</button> 
 	<table class="table table-bordered">
  	<tr>
- 		<td><b>User Name</b></td>
- 		<td><b>User Address</b></td>
- 		<td><b>User Status</b></td>
- 		<td><b>User Qualification</b></td>
- 		<td><b>User Date of Birth</b></td>
+ 		<td><b>Name</b></td>
+ 		<td><b>Password</b></td>
+ 		<td><b>Full Name</b></td>
+ 		<td><b>Address</b></td>
+ 		<td><b>Country</b></td>
+ 		<td><b>Zipcode</b></td>
+ 		<td><b>Email Address</b></td>
+ 		<td><b>Gender</b></td>
+ 		<td><b>Language</b></td>
+ 		<td><b>Date of Birth</b></td>
+ 		<td><b>Education Level</b></td>
  		<td><b>Action</b></td>
+ 		
  	</tr>
- 
- 	<c:forEach items="${requestScope.myusers}" var="m">
-  	<tr>
-	 <td>${m.name}</td>
-	 <td>${m.address }</td>
-	 <td>${m.status }</td>
-	 <td>${m.qualification}</td>
- 	<td>${m.dateofbirth }</td>
- 	<td>
- 	<button type="button" class="btn btn-success btn-lg">
- 	<a href="${pageContext.request.contextPath}/myuser/edit/${m.id}">Edit</a>
- 	</button>
-  		<button type="button" class="btn btn-danger btn-lg">Delete</button>
- 	</td>
- 	</tr>
- 	</c:forEach>
  				</table>
 	</body>
 </html>
