@@ -49,15 +49,16 @@ public class RegisterController {
 		System.out.println(request.getParameter("date_of_birth"));
 		System.out.println(request.getParameter("relationshipstatus"));
 		System.out.println(request.getParameter("studyfield"));
-		System.out.println(request.getParameter("plan"));
+		System.out.println(request.getParameter("user_status"));
 		System.out.println(request.getParameter("things"));
 		System.out.println(request.getParameter("educationlevel"));
 		Register register = new Register();
 		register.setName(request.getParameter("user_name"));
 		register.setPassword(request.getParameter("user_password"));
-		System.out.println(request.getParameter("user_firstname"));
-		System.out.println(request.getParameter("user_middlename"));
-		System.out.println(request.getParameter("user_lastname"));
+	
+		register.setFirstname(request.getParameter("user_firstname"));
+		register.setMiddlename(request.getParameter("user_middlename")); 
+		register.setLastname(request.getParameter("user_lastname"));
 		register.setAddress(request.getParameter("user_address"));
 		register.setCountry(request.getParameter("user_country"));
 		register.setZipcode(request.getParameter("user_zipcode"));
@@ -68,7 +69,7 @@ public class RegisterController {
 		register.setDate("date");
 		register.setStatus(request.getParameter("relationshipstatus"));
 		register.setField(request.getParameter("studyfield"));
-		register.setPlan(request.getParameter("plan"));
+		register.setPlan(request.getParameter("user_status"));
 		register.setThings(request.getParameter("things"));
 		register.setEducationlevel(request.getParameter("educationlevel"));
 		registerService.create(register);

@@ -20,8 +20,38 @@ public class Register {
 	@Column(name="password")
 	public String password;
 	
-	@Column(name="fullname")
-	public String fullname;
+	@Column(name="firstname")
+	public String firstname;
+	
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getMiddlename() {
+		return middlename;
+	}
+
+	public void setMiddlename(String middlename) {
+		this.middlename = middlename;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	@Column(name="middlename")
+	public String middlename;
+	
+	@Column(name="lastname")
+	public String lastname;
 	
 	@Column(name="address")
 	public String address;
@@ -86,13 +116,7 @@ public class Register {
 		this.password = password;
 	}
 
-	public String getFullname() {
-		return fullname;
-	}
-
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
-	}
+	
 
 	public String getAddress() {
 		return address;

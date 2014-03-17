@@ -29,17 +29,17 @@
     </div>
      
     <div class="form-group">
-      <label for="fullName" class="col-sm-2 control-label">User Full Name</label>
+      <label  class="col-sm-2 control-label">User Full Name</label></div>
        <div class="col-sm-2">
-        <input type="firstname" class="form-control" id="inputName" placeholder="FirstName" name="user_firstname">
+        <input type="firstname" class="form-control" id="user_firstname" placeholder="FirstName" name="user_firstname">
        </div>
         <div class="col-sm-2">
-          <input type="middlename" class="form-control" id="inputName" placeholder="MiddleName" name="user_middlename">
+          <input type="middlename" class="form-control" id="user_middlename" placeholder="MiddleName" name="user_middlename">
         </div>
          <div class="col-sm-2">
-          <input type="lastname" class="form-control" id="inputName" placeholder="LastName" name="user_lastname">
+          <input type="lastname" class="form-control" id="user_lastname" placeholder="LastName" name="user_lastname">
          </div>
-     </div>
+     
      
      <div class="form-group">
     	<label for="inputaddress" class="col-sm-2 control-label">User Address</label>
@@ -153,17 +153,17 @@
     			<div class="col-xs-4">
       				<div class="radio">
   			<label>
-   		<input type="radio" value="Single" checked id="user_status" name="user_status">Free
+   		<input type="radio" value="Free" checked id="user_status" name="user_status">Free
   			</label>
 					</div>
 	<div class="radio">
  	 <label>
-    	<input type="radio" value="Married" checked id="user_status" name="user_status">Silver
+    	<input type="radio" value="Silver" checked id="user_status" name="user_status">Silver
    	 </label>
 	</div>
 	<div class="radio">
  	 <label>
-    	<input type="radio" value="Married" checked id="user_status" name="user_status">Gold
+    	<input type="radio" value="Gold" checked id="user_status" name="user_status">Gold
    	 </label>
 	</div>
    	 		</div>
@@ -190,12 +190,12 @@
   	 <label  class="col-sm-2 control-label">Education Level</label>
   	   <div class="col-xs-4">
   	    <select class="form-control" id="studyfield" name="educationlevel">
-  	     <option>Select Level</option>
-  	     <option>Secondary</option>
-  	     <option>High Secondary</option>
-  	     <option>Graduation</option>
-   	     <option>Post Graduation</option>
-   	     <option>Phd.</option>
+  	     <option value="">Select Level</option>
+  	     <option value="secondary">Secondary</option>
+  	     <option value="hs">High Secondary</option>
+  	     <option value="graduation">Graduation</option>
+   	     <option value="postgraduation">Post Graduation</option>
+   	     <option value="phd">Phd.</option>
 	    </select>
   	   </div>
   	 </div>

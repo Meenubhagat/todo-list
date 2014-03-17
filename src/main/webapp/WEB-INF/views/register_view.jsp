@@ -19,6 +19,7 @@
  	<tr>
  		<td><b>Name</b></td>
  		<td><b>Full Name</b></td>
+ 		
  		<td><b>Address</b></td>
  		<td><b>Country</b></td>
  		<td><b>Zipcode</b></td>
@@ -34,7 +35,9 @@
  	<c:forEach items="${requestScope.register}" var="r">
   	<tr>
 	 <td>${r.name}</td>
-	 <td>${r.fullname}</td>
+	 <td>${r.firstname} 
+	  ${r.middlename} ${r.lastname}</td>
+	  
 	 <td>${r.address }</td>
 	 <td>${r.country }</td>
 	 <td>${r.zipcode}</td>
