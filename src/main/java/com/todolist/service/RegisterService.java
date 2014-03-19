@@ -9,5 +9,9 @@ public interface RegisterService {
 	public Register create(Register register);
 	
 	public List<Register> getAllRegister();
+	
+	public Register getRegisterById(int id);
+
+    public boolean deleteRegisterByID(int registerId);
 
 }

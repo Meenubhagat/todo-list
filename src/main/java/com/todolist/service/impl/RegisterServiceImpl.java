@@ -13,6 +13,8 @@ import com.todolist.service.RegisterService;
 @Service
 public class RegisterServiceImpl implements RegisterService {
 
+	
+
 	@Override
 	@Transactional
 	public Register create(Register register) {
@@ -25,8 +27,19 @@ public class RegisterServiceImpl implements RegisterService {
 	
 	@Override
 	public List<Register> getAllRegister() {
-		// TODO Auto-generated method stub
+		
 		return (List<Register>) registerRepository.findAll();
+	}
+
+	@Override
+	public Register getRegisterById(int id) {
+		return registerRepository.findOne(id);
+	}
+
+	@Override
+	public boolean deleteRegisterByID(int id) {
+		registerRepository.delete(id);
+		return true;
 	}
 	
 }

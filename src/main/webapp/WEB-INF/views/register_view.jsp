@@ -11,15 +11,14 @@
 	</head>
 	<body>
 		<center><h1> Registration Data View </h1></center>
-			<button type="button" class="btn btn-success btn-lg">
+			<a  class="btn btn-success btn-lg" href="${pageContext.request.contextPath}/register/create">
 			
 			 <b>Add New</b>
-			</button> 
+			</a> 
 	<table class="table table-bordered">
  	<tr>
  		<td><b>Name</b></td>
  		<td><b>Full Name</b></td>
- 		
  		<td><b>Address</b></td>
  		<td><b>Country</b></td>
  		<td><b>Zipcode</b></td>
@@ -35,9 +34,7 @@
  	<c:forEach items="${requestScope.register}" var="r">
   	<tr>
 	 <td>${r.name}</td>
-	 <td>${r.firstname} 
-	  ${r.middlename} ${r.lastname}</td>
-	  
+	 <td>${r.firstname} ${r.middlename} ${r.lastname}</td>
 	 <td>${r.address }</td>
 	 <td>${r.country }</td>
 	 <td>${r.zipcode}</td>
@@ -48,10 +45,9 @@
  	<td>${r.educationlevel }</td>
  	
  	<td>
- 	<button type="button" class="btn btn-success btn-lg">
- 	Edit
- 	</button>
-  		<button type="button" class="btn btn-danger btn-lg">Delete</button>
+ 	<a class="btn btn-success btn-lg" href="${pageContext.request.contextPath}/register/edit/${r.id}">Edit</a>
+  		
+  	<a class="btn btn-danger btn-lg" herf="${pageContext.request.contextPath}/register/delete/${r.id}">Delete</a>
  	</td>
  	</tr>
  	</c:forEach>

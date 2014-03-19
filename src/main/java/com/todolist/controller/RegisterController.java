@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,6 +33,7 @@ public class RegisterController {
 		return mav;
 	}
 	
+	
 	@RequestMapping(value="/save", method=RequestMethod.POST)// for tking inputput
 	public ModelAndView saveRegister(){
 		System.out.println(request.getParameter("user_name"));
@@ -52,11 +54,11 @@ public class RegisterController {
 		System.out.println(request.getParameter("user_status"));
 		System.out.println(request.getParameter("things"));
 		System.out.println(request.getParameter("educationlevel"));
+		
 		Register register = new Register();
 		register.setName(request.getParameter("user_name"));
 		register.setPassword(request.getParameter("user_password"));
-	
-		register.setFirstname(request.getParameter("user_firstname"));
+	    register.setFirstname(request.getParameter("user_firstname"));
 		register.setMiddlename(request.getParameter("user_middlename")); 
 		register.setLastname(request.getParameter("user_lastname"));
 		register.setAddress(request.getParameter("user_address"));
@@ -72,6 +74,7 @@ public class RegisterController {
 		register.setPlan(request.getParameter("user_status"));
 		register.setThings(request.getParameter("things"));
 		register.setEducationlevel(request.getParameter("educationlevel"));
+		
 		registerService.create(register);
 		return new ModelAndView(new RedirectView("registerlist"));
 	}
@@ -84,6 +87,24 @@ public class RegisterController {
 		mav.addObject("register", registerlist); //passing list to jsp page
 		return mav;
 	}
+	
+	
+	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
+	public ModelAndView editRegister(@PathVariable int id) {
+		final Register reg = registerService.getRegisterById(id);
+		ModelAndView mav = new ModelAndView("register-create");
+		mav.addObject("register", reg);
+		return mav;
+	}
+
+	@RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
+	public ModelAndView deleteRegister(@PathVariable int id){
+		System.out.println("id:"+id);
+		registerService.deleteRegisterByID(id);
+		return new ModelAndView(new RedirectView("todolist/register/registerlist"));
+		
+	}
+	
 	
 	
 	

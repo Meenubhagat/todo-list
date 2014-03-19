@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
@@ -8,43 +9,43 @@
 	   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
 		 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
  </head>
-   <body style="margin:0;background-color:purple;color:#fff;">
+   <body style="margin:0;">
    
-	<form class="form-horizontal" method="post" action="save">
+	<form class="form-horizontal" method="post" action="/todolist/register/save">
 	 <fieldset>  
       <h1 style="margin:20px;padding:10px;background-color:pink;color:black;">Registration Form</h1><br>
       <div class="container">
 	   <div class="form-group">
 	    <label for="inputName" class="col-sm-2 control-label">User Name</label>
 	     <div class="col-sm-4">
-	      <input type="name" class="form-control" id="inputName" placeholder="Name" name="user_name">
+	      <input type="name" class="form-control" id="inputName" placeholder="Name" name="user_name" value="${register.name}">
 	     </div>
 	   </div>
 	  
 	<div class="form-group">
       <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
        <div class="col-sm-4">
-         <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="user_password">
+         <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="user_password" value="${register.password }">
        </div>
     </div>
      
     <div class="form-group">
-      <label  class="col-sm-2 control-label">User Full Name</label></div>
+      <label  class="col-sm-2 control-label">User Full Name</label>
        <div class="col-sm-2">
-        <input type="firstname" class="form-control" id="user_firstname" placeholder="FirstName" name="user_firstname">
+        <input type="firstname" class="form-control" id="user_firstname" placeholder="FirstName" name="user_firstname" value="${register.firstname }">
        </div>
         <div class="col-sm-2">
-          <input type="middlename" class="form-control" id="user_middlename" placeholder="MiddleName" name="user_middlename">
+          <input type="middlename" class="form-control" id="user_middlename" placeholder="MiddleName" name="user_middlename" value="${register.middlename }">
         </div>
          <div class="col-sm-2">
-          <input type="lastname" class="form-control" id="user_lastname" placeholder="LastName" name="user_lastname">
+          <input type="lastname" class="form-control" id="user_lastname" placeholder="LastName" name="user_lastname" value="${register.lastname }">
          </div>
-     
+         </div>
      
      <div class="form-group">
     	<label for="inputaddress" class="col-sm-2 control-label">User Address</label>
     	  <div class="col-xs-4">
-      		 <textarea class="form-control" rows="3" id="user_Address" name="user_address" placeholder="Address"></textarea>
+      		 <textarea class="form-control" rows="3" id="user_Address" name="user_address" placeholder="Address"  value="${register.address }"></textarea>
     	  </div>
    	 </div>
   	
@@ -53,10 +54,17 @@
   	   <div class="col-xs-4">
   	    <select class="form-control" id="country" name="user_country">
   	     <option>Select Country</option>
-  	     <option>India</option>
-  	     <option>Canada</option>
-  	     <option>Australia</option>
-   	     <option>Singapore</option>
+  	     <option <c:if test="${register.country.equals(\"India\")} ">selected
+  	     </c:if>>India</option>
+  	     
+  	     <option <c:if test="${register.country.equals(\"Canada\")}">selected
+  	     </c:if>>Canada</option>
+  	     
+  	     <option <c:if test="${register.country.equals(\"Australia\")}">selected
+  	     </c:if>>Australia</option>
+  	     
+   	     <option <c:if test="${register.country.equals(\"Singapore\")}">
+   	     </c:if>>Singapore</option>
 	    </select>
   	   </div>
   	 </div>
@@ -64,14 +72,14 @@
   	 <div class="form-group">
   	    <label type="zipcode" class="col-sm-2 control-label">ZipCode</label>
   	     <div class="col-sm-4">
-           <input type="zipcode" class="form-control" id="inputcode" placeholder="zipcode" name="user_zipcode">
+           <input type="zipcode" class="form-control" id="inputcode" placeholder="zipcode" name="user_zipcode" value="${register.zipcode}">
          </div>
   	 </div>
   	 
   	  <div class="form-group">
   	    <label type="email" class="col-sm-2 control-label">User Email</label>
   	     <div class="col-sm-4">
-           <input type="email" class="form-control" id="email" placeholder="User Email" name="user_email">
+           <input type="email" class="form-control" id="email" placeholder="User Email" name="user_email" value="${register.email}">
          </div>
   	 </div>
   	 
@@ -80,12 +88,16 @@
     	  <div class="col-xs-4">
       	    <div class="radio">
   	       <label>
-   		    <input type="radio" value="Male" checked id="user_Gender" name="user_gender">Male
+   		    <input type="radio" value="Male" checked id="user_Gender" name="user_gender" 
+   		    <c:if test="${register.gender.equals(\"Male\")}">checked
+   		    </c:if>>Male
   	       </label>
 		    </div>
 	       <div class="radio">
  	        <label>
-    	     <input type="radio" value="Female" checked id="user_gender" name="user_gender">Female
+    	     <input type="radio" value="Female" checked id="user_gender" name="user_gender"
+    	     <c:if test="${register.gender.equals(\"Female\")}">checked
+    	     </c:if>>Female
     	    </label>
 	       </div>
    	 	  </div>
@@ -97,10 +109,18 @@
                <div class="col-lg-6">
                   <div class="input-group">
                    <span class="input-group">
-            		<input type="checkbox" name="language" value="English">English
-       				 <input type="checkbox" name="language" value="Hindi">Hindi
-      				  <input type="checkbox" name="language" value="Punjabi">Punjabi
-        				<input type="checkbox" name="language" value="Other">Other
+            		<input type="checkbox" name="language" value="English"
+            		<c:if test="${register.language.equals(\"English\")}">checked
+            		</c:if>>English
+       				 <input type="checkbox" name="language" value="Hindi"
+       				 <c:if test="${register.language.equals(\"Hindi\")}">checked
+       				 </c:if>>Hindi
+      				  <input type="checkbox" name="language" value="Punjabi"
+      				  <c:if test="${register.language.equals(\"Punjabi\")}">checked
+      				  </c:if>>Punjabi
+        				<input type="checkbox" name="language" value="Other" 
+        				<c:if test="${register.language.equals(\"Other\")}">checked
+        				</c:if>>Other
       				</span>
       
     				</div><!-- /input-group -->
@@ -111,7 +131,7 @@
       <div class="form-group">
     	<label for="about" class="col-sm-2 control-label">About</label>
     		<div class="col-xs-4">
-      			<textarea class="form-control" rows="3" id="about" name="about"></textarea>
+      			<textarea class="form-control" rows="3" id="about" name="about">${register.about}</textarea>
     		</div>
   	  </div>
   	  
@@ -119,6 +139,7 @@
     <label for="inputPassword3" class="col-sm-2 control-label">Date of Birth</label>
     <div class="col-xs-10">
     	<input type="date" id="date_of_birth" name="date_of_birth"></input>
+    	${register.date}
     	</div>
    </div>
    <div class="form-group">
@@ -126,10 +147,15 @@
   	   <div class="col-xs-4">
   	    <select class="form-control" id="relationshipstatus" name="relationshipstatus">
   	     <option>Select Status</option>
-  	     <option>Single</option>
-  	     <option>Married</option>
-  	     <option>Divorce</option>
-   	     <option>Other</option>
+  	     <option <c:if test="${register.status.equals(\"Single\")}">selected
+  	     </c:if>>Single</option>
+  	     <option <c:if test="${register.status.equals(\"Married\")}">selected
+  	     selected
+  	     </c:if>>Married</option>
+  	     <option <c:if test="${register.status.equals(\"Divorce\")}">selected
+  	     </c:if>>Divorce</option>
+   	     <option <c:if test="${register.status.equals(\"Other\")}">selected
+   	     </c:if>>Other</option>
 	    </select>
   	   </div>
   	 </div>
@@ -139,11 +165,16 @@
   	   <div class="col-xs-4">
   	    <select class="form-control" id="studyfield" name="studyfield">
   	     <option>Select Field</option>
-  	     <option>Computer</option>
-  	     <option>Business</option>
-  	     <option>Law</option>
-   	     <option>English</option>
-   	     <option>Other</option>
+  	     <option <c:if test="${register.field.equals(\"Computer\")}">selected
+  	     </c:if>>Computer</option>
+  	     <option <c:if test="${register.field.equals(\"Business\")}">selected
+  	     </c:if>>Business</option>
+  	     <option <c:if test="${register.field.equals(\"Law\")}">selected
+  	     </c:if>>Law</option>
+   	     <option <c:if test="${register.field.equals(\"English\")}">selected
+   	     </c:if>>English</option>
+   	     <option <c:if test="${register.field.equals(\"Other\")}">
+   	     </c:if>>Other</option>
 	    </select>
   	   </div>
   	 </div>
@@ -153,17 +184,24 @@
     			<div class="col-xs-4">
       				<div class="radio">
   			<label>
-   		<input type="radio" value="Free" checked id="user_status" name="user_status">Free
+   		<input type="radio" value="Free" checked id="user_status" name="user_status"
+   		<c:if test="${register.plan.equals(\"Free\")}">selected
+   		</c:if>>Free
   			</label>
 					</div>
 	<div class="radio">
  	 <label>
-    	<input type="radio" value="Silver" checked id="user_status" name="user_status">Silver
+    	<input type="radio" value="Silver" checked id="user_status" name="user_status"
+    	<c:if test="${register.plan.equals(\"Silver\")}">selected
+    	</c:if>>Silver
    	 </label>
 	</div>
 	<div class="radio">
  	 <label>
-    	<input type="radio" value="Gold" checked id="user_status" name="user_status">Gold
+    	<input type="radio" value="Gold" checked id="user_status" name="user_status"
+    	<c:if test="${register.plan.equals(\"Gold\")}">selected
+    	
+    	</c:if>>Gold
    	 </label>
 	</div>
    	 		</div>
@@ -175,10 +213,18 @@
                <div class="col-lg-6">
                   <div class="input-group">
                    <span class="input-group">
-            		<input type="checkbox" name="things" value="phone">Phone
-       				 <input type="checkbox" name="things" value="automotive">Automotive
-      				  <input type="checkbox" name="things" value="computer">Computer
-        				<input type="checkbox" name="things" value="tablet">Tablet
+            		<input type="checkbox" name="things" value="phone"
+            		<c:if test="${register.things.equals(\"Phone\")}">checked
+            		</c:if>>Phone
+       				 <input type="checkbox" name="things" value="automotive"
+       				 <c:if test="${register.things.equals(\"Automotive\")}">checked
+       				 </c:if>>Automotive
+      				  <input type="checkbox" name="things" value="computer"
+      				  <c:if test="${register.things.equals(\"Computer\")}">checked
+      				  </c:if>>Computer
+        				<input type="checkbox" name="things" value="tablet"
+        				<c:if test="${regiater.things.equals(\"Tablet\")}">checked
+        				</c:if>>Tablet
       				</span>
       
     				</div><!-- /input-group -->
@@ -191,11 +237,16 @@
   	   <div class="col-xs-4">
   	    <select class="form-control" id="studyfield" name="educationlevel">
   	     <option value="">Select Level</option>
-  	     <option value="secondary">Secondary</option>
-  	     <option value="hs">High Secondary</option>
-  	     <option value="graduation">Graduation</option>
-   	     <option value="postgraduation">Post Graduation</option>
-   	     <option value="phd">Phd.</option>
+  	     <option value="secondary" <c:if test="${register.educationlevel.equals(\"Secondary\")}">selected
+  	     </c:if>>Secondary</option>
+  	     <option value="hs" <c:if test="${register.educationlevel.equals(\"High Secondary\")}">selected
+  	     </c:if>>High Secondary</option>
+  	     <option value="graduation" <c:if test="${register.educationlevel.equals(\"Graduation\")}">selected
+  	     </c:if>>Graduation</option>
+   	     <option value="postgraduation" <c:if test="${register.educationlevel.equals(\"Post Graduation\")}">selected
+   	     </c:if>>Post Graduation</option>
+   	     <option value="phd" <c:if test="${register.educationlevel.equals(\"Phd\")}">selected
+   	     </c:if>>Phd.</option>
 	    </select>
   	   </div>
   	 </div>
