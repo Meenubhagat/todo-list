@@ -237,15 +237,15 @@
   	   <div class="col-xs-4">
   	    <select class="form-control" id="studyfield" name="educationlevel">
   	     <option value="">Select Level</option>
-  	     <option value="secondary" <c:if test="${register.educationlevel.equals(\"Secondary\")}">selected
+  	     <option value="Secondary" <c:if test="${register.educationlevel.equals(\"Secondary\")}">selected
   	     </c:if>>Secondary</option>
-  	     <option value="hs" <c:if test="${register.educationlevel.equals(\"High Secondary\")}">selected
+  	     <option value="High Secondary" <c:if test="${register.educationlevel.equals(\"High Secondary\")}">selected
   	     </c:if>>High Secondary</option>
-  	     <option value="graduation" <c:if test="${register.educationlevel.equals(\"Graduation\")}">selected
+  	     <option value="Graduation" <c:if test="${register.educationlevel.equals(\"Graduation\")}">selected
   	     </c:if>>Graduation</option>
-   	     <option value="postgraduation" <c:if test="${register.educationlevel.equals(\"Post Graduation\")}">selected
+   	     <option value="Post Graduation" <c:if test="${register.educationlevel.equals(\"Post Graduation\")}">selected
    	     </c:if>>Post Graduation</option>
-   	     <option value="phd" <c:if test="${register.educationlevel.equals(\"Phd\")}">selected
+   	     <option value="Phd" <c:if test="${register.educationlevel.equals(\"Phd\")}">selected
    	     </c:if>>Phd.</option>
 	    </select>
   	   </div>

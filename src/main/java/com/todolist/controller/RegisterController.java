@@ -99,9 +99,9 @@ public class RegisterController {
 
 	@RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
 	public ModelAndView deleteRegister(@PathVariable int id){
-		System.out.println("id:"+id);
+		System.out.println("id:" + id);
 		registerService.deleteRegisterByID(id);
-		return new ModelAndView(new RedirectView("todolist/register/registerlist"));
+		return new ModelAndView(new RedirectView("/todolist/register/registerlist"));
 		
 	}
 	

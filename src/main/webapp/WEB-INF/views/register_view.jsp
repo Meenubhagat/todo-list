@@ -10,8 +10,8 @@
 					<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<center><h1> Registration Data View </h1></center>
-			<a  class="btn btn-success btn-lg" href="${pageContext.request.contextPath}/register/create">
+		<center><h1 style="margin:20px;padding:10px;background-color:pink;color:black;"> Registration Data View </h1></center>
+			<a type="button" class="btn btn-success btn-lg" href="${pageContext.request.contextPath}/register/create">
 			
 			 <b>Add New</b>
 			</a> 
@@ -46,8 +46,7 @@
  	
  	<td>
  	<a class="btn btn-success btn-lg" href="${pageContext.request.contextPath}/register/edit/${r.id}">Edit</a>
-  		
-  	<a class="btn btn-danger btn-lg" herf="${pageContext.request.contextPath}/register/delete/${r.id}">Delete</a>
+  	<a class="btn btn-danger btn-lg" href="${pageContext.request.contextPath}/register/delete/${r.id}">Delete</a>
  	</td>
  	</tr>
  	</c:forEach>
