@@ -12,6 +12,7 @@
    <body style="margin:0;">
    
 	<form class="form-horizontal" method="post" action="/todolist/register/save">
+	<input type="hidden" name="registerId" value="${register.id}">
 	 <fieldset>  
       <h1 style="margin:20px;padding:10px;background-color:pink;color:black;">Registration Form</h1><br>
       <div class="container">

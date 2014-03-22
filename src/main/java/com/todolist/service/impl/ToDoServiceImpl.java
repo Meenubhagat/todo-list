@@ -53,4 +53,18 @@ public class ToDoServiceImpl implements ToDoService {
 		return null;
 	}
 
+	@Override
+	public Todo getTodoById(int id) {
+		
+		return todoRepository.findOne(id);
+	}
+
+	@Override
+	public boolean deleteTodoById(int id) {
+		 todoRepository.delete(id);
+		 return true;
+	}
+
+	
+
 }

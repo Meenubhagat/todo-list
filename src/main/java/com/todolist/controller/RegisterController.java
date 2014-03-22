@@ -56,6 +56,11 @@ public class RegisterController {
 		System.out.println(request.getParameter("educationlevel"));
 		
 		Register register = new Register();
+		
+		if (!request.getParameter("registerId").equals("")) {
+			 register.setId(Integer.parseInt(request.getParameter("registerId")));
+			}
+		
 		register.setName(request.getParameter("user_name"));
 		register.setPassword(request.getParameter("user_password"));
 	    register.setFirstname(request.getParameter("user_firstname"));

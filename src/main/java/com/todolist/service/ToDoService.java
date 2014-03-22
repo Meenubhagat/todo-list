@@ -12,5 +12,8 @@ public interface ToDoService {
 	public Todo findById(int id);
 	public Todo delete(int id);
 	public List<Todo> getAllTodo();
+	
+	public Todo getTodoById(int id);
 	public Todo update(Todo todo) throws TodoNotFound;
+	public boolean deleteTodoById(int id);
 }
