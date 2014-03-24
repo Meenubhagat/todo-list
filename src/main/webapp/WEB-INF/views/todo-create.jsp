@@ -18,14 +18,14 @@
     	<label for="title" class="col-sm-2 control-label">Task Name</label>
     		<div class="col-xs-4">
     		
-      			<input type="title" class="form-control" id="name" name="task_name" value="${todo.title}">
+      			<input type="title" class="form-control" id="name" name="title" value="${todo.title}">
     		</div>
   	</div>
   	
     <div class="form-group">
     	<label for="desc" class="col-sm-2 control-label" >Task Description</label>
     		<div class="col-xs-4">
-      			<textarea class="form-control" rows="3" id="todo_desc" name="task_desc">${todo.desc}</textarea>
+      			<textarea class="form-control" rows="3" id="todo_desc" name="desc">${todo.desc}</textarea>
     		</div>
     </div>
     
@@ -34,7 +34,7 @@
     		<div class="col-xs-4">
       			<div class="radio">
   		<label>
-  			<input type="radio"  value="Done" id="status" name="task_status"
+  			<input type="radio"  value="Done" id="status" name="status"
      			<c:if test="${todo.status.equals(\"Done\")}">checked
    	 			</c:if>>Done
 		 </label>
@@ -42,7 +42,7 @@
 				
 		<div class="radio">
   		<label>
-    		<input type="radio"  value="Not Done" id="status" name="task_status"
+    		<input type="radio"  value="Not Done" id="status" name="status"
       			<c:if test="${todo.status.equals(\"Not Done\")}">checked
    	 			</c:if>>Not Done
   		</label>
@@ -53,7 +53,7 @@
   	<div class="form-group">
     	<label for="priority" class="col-sm-2 control-label">Task Priority</label>
     		<div class="col-xs-4">
-    			 <select class="form-control" id="priority" name="task_priority" value="priority">
+    			 <select class="form-control" id="priority" name="priority" value="priority">
    					<option>Select Priority</option>  
     					<option <c:if test="${todo.priority.equals(\"High\")}">selected
    	 							</c:if>>High</option>
@@ -68,7 +68,7 @@
     </div><br>
     <div class="form-group">
      	<label for="date" class="col-sm-2 control-label">Date</label>
-  		  <input type="date" id="date" name="start_date" value="${todo.startDate}"></input>
+  		  <input type="date" id="date" name="startDate" value="${todo.startDate}"></input>
     		
     </div>
     

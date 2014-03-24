@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,20 +39,20 @@ public class TodoController {
 	}
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)// for tking inputput
-	public ModelAndView saveTodo(){
+	public ModelAndView saveTodo(@ModelAttribute Todo todo){
+		/*
 		System.out.println(request.getParameter("task_name"));
 		System.out.println(request.getParameter("task_desc"));
 		System.out.println(request.getParameter("task_status"));
 		System.out.println(request.getParameter("task_priority"));
 		System.out.println(request.getParameter("start_date"));
-		
 		Todo todo = new Todo();
-		
 		todo.setTitle(request.getParameter("task_name"));
 		todo.setDesc(request.getParameter("task_desc"));
 		todo.setStatus(request.getParameter("task_status"));
 		todo.setPriority(request.getParameter("task_priority"));
 		todo.setStartDate(request.getParameter("start_date"));
+		*/
 		
 		todoService.create(todo);
 		return new ModelAndView(new RedirectView("list"));
