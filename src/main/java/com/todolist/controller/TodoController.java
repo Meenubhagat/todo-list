@@ -40,7 +40,9 @@ public class TodoController {
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)// for tking inputput
 	public ModelAndView saveTodo(@ModelAttribute Todo todo){
-		/*
+		/* This is long process first get and then set so instead of using this we will use 
+		 * new method. we will use modelattribute annotation and we will change code in create jsp
+		 * as the name attribute will be same as we written in view jsp page....
 		System.out.println(request.getParameter("task_name"));
 		System.out.println(request.getParameter("task_desc"));
 		System.out.println(request.getParameter("task_status"));

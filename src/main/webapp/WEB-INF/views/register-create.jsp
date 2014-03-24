@@ -19,41 +19,41 @@
 	   <div class="form-group">
 	    <label for="inputName" class="col-sm-2 control-label">User Name</label>
 	     <div class="col-sm-4">
-	      <input type="name" class="form-control" id="inputName" placeholder="Name" name="user_name" value="${register.name}">
+	      <input type="name" class="form-control" id="inputName" placeholder="Name" name="name" value="${register.name}">
 	     </div>
 	   </div>
 	  
 	<div class="form-group">
       <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
        <div class="col-sm-4">
-         <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="user_password" value="${register.password }">
+         <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password" value="${register.password }">
        </div>
     </div>
      
     <div class="form-group">
       <label  class="col-sm-2 control-label">User Full Name</label>
        <div class="col-sm-2">
-        <input type="firstname" class="form-control" id="user_firstname" placeholder="FirstName" name="user_firstname" value="${register.firstname }">
+        <input type="firstname" class="form-control" id="user_firstname" placeholder="FirstName" name="firstname" value="${register.firstname }">
        </div>
         <div class="col-sm-2">
-          <input type="middlename" class="form-control" id="user_middlename" placeholder="MiddleName" name="user_middlename" value="${register.middlename }">
+          <input type="middlename" class="form-control" id="user_middlename" placeholder="MiddleName" name="middlename" value="${register.middlename }">
         </div>
          <div class="col-sm-2">
-          <input type="lastname" class="form-control" id="user_lastname" placeholder="LastName" name="user_lastname" value="${register.lastname }">
+          <input type="lastname" class="form-control" id="user_lastname" placeholder="LastName" name="lastname" value="${register.lastname }">
          </div>
          </div>
      
      <div class="form-group">
     	<label for="inputaddress" class="col-sm-2 control-label">User Address</label>
     	  <div class="col-xs-4">
-      		 <textarea class="form-control" rows="3" id="user_Address" name="user_address" placeholder="Address"  value="${register.address }"></textarea>
+      		 <textarea class="form-control" rows="3" id="user_Address" name="address" placeholder="Address"  value="${register.address }"></textarea>
     	  </div>
    	 </div>
   	
   	<div class="form-group">
   	 <label type="country" class="col-sm-2 control-label" >Country</label>
   	   <div class="col-xs-4">
-  	    <select class="form-control" id="country" name="user_country">
+  	    <select class="form-control" id="country" name="country">
   	     <option>Select Country</option>
   	     <option <c:if test="${register.country.equals(\"India\")} ">selected
   	     </c:if>>India</option>
@@ -73,14 +73,14 @@
   	 <div class="form-group">
   	    <label type="zipcode" class="col-sm-2 control-label">ZipCode</label>
   	     <div class="col-sm-4">
-           <input type="zipcode" class="form-control" id="inputcode" placeholder="zipcode" name="user_zipcode" value="${register.zipcode}">
+           <input type="zipcode" class="form-control" id="inputcode" placeholder="zipcode" name="zipcode" value="${register.zipcode}">
          </div>
   	 </div>
   	 
   	  <div class="form-group">
   	    <label type="email" class="col-sm-2 control-label">User Email</label>
   	     <div class="col-sm-4">
-           <input type="email" class="form-control" id="email" placeholder="User Email" name="user_email" value="${register.email}">
+           <input type="email" class="form-control" id="email" placeholder="User Email" name="email" value="${register.email}">
          </div>
   	 </div>
   	 
@@ -89,14 +89,14 @@
     	  <div class="col-xs-4">
       	    <div class="radio">
   	       <label>
-   		    <input type="radio" value="Male" checked id="user_Gender" name="user_gender" 
+   		    <input type="radio" value="Male" checked id="user_Gender" name="gender" 
    		    <c:if test="${register.gender.equals(\"Male\")}">checked
    		    </c:if>>Male
   	       </label>
 		    </div>
 	       <div class="radio">
  	        <label>
-    	     <input type="radio" value="Female" checked id="user_gender" name="user_gender"
+    	     <input type="radio" value="Female" checked id="user_gender" name="gender"
     	     <c:if test="${register.gender.equals(\"Female\")}">checked
     	     </c:if>>Female
     	    </label>
@@ -139,8 +139,8 @@
   	   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">Date of Birth</label>
     <div class="col-xs-10">
-    	<input type="date" id="date_of_birth" name="date_of_birth"></input>
-    	${register.date}
+    	<input type="date" id="date_of_birth" name="date" value="${register.date}"></input>
+    	
     	</div>
    </div>
    <div class="form-group">

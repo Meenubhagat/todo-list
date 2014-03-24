@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,7 +36,8 @@ public class RegisterController {
 	
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)// for tking inputput
-	public ModelAndView saveRegister(){
+	public ModelAndView saveRegister(@ModelAttribute Register register){
+		/*
 		System.out.println(request.getParameter("user_name"));
 		System.out.println(request.getParameter("user_password"));
 		System.out.println(request.getParameter("user_firstname"));
@@ -79,7 +81,7 @@ public class RegisterController {
 		register.setPlan(request.getParameter("user_status"));
 		register.setThings(request.getParameter("things"));
 		register.setEducationlevel(request.getParameter("educationlevel"));
-		
+		*/
 		registerService.create(register);
 		return new ModelAndView(new RedirectView("registerlist"));
 	}
