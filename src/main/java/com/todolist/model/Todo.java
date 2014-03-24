@@ -1,14 +1,10 @@
 package com.todolist.model;
 
-
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 
 @Entity
 @Table(name="tbl_todo")
@@ -22,6 +18,18 @@ public class Todo {
     @Column(name="todo_title")
     public String title;
     
+	@Column(name="todo_desc")
+    public String desc;
+	
+	@Column(name="priority")
+    public String priority;
+        
+	@Column(name="status")
+    public String status;
+	
+	@Column(name="start_date")
+    public String startDate;
+
     public Integer getId() {
 		return id;
 	}
@@ -36,10 +44,6 @@ public class Todo {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public String getDesc() {
-		return desc;
 	}
 
 	public String getPriority() {
@@ -58,27 +62,20 @@ public class Todo {
 		this.status = status;
 	}
 
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
+	public String getDesc() {
+		return desc;
 	}
 
 	public void setDesc(String desc) {
 		this.desc = desc;
+	}	
+
+	public String getStartDate() {
+		return startDate;
 	}
 
-	@Column(name="todo_desc")
-    public String desc;
+	public void setStartDate(String string) {
+		this.startDate = string;
+	}
 	
-	@Column(name="priority")
-    public String priority;
-        
-	@Column(name="status")
-    public String status;
-	
-	@Column(name="date")
-    public String date;
 }

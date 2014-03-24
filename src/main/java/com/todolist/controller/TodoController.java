@@ -43,7 +43,7 @@ public class TodoController {
 		System.out.println(request.getParameter("task_desc"));
 		System.out.println(request.getParameter("task_status"));
 		System.out.println(request.getParameter("task_priority"));
-		System.out.println(request.getParameter("date"));
+		System.out.println(request.getParameter("start_date"));
 		
 		Todo todo = new Todo();
 		
@@ -51,7 +51,7 @@ public class TodoController {
 		todo.setDesc(request.getParameter("task_desc"));
 		todo.setStatus(request.getParameter("task_status"));
 		todo.setPriority(request.getParameter("task_priority"));
-		todo.setDate("date");
+		todo.setStartDate(request.getParameter("start_date"));
 		
 		todoService.create(todo);
 		return new ModelAndView(new RedirectView("list"));

@@ -29,7 +29,7 @@
  	<td>${t.desc }</td>
  	<td>${t.status }</td>
 	<td>${t.priority}</td>
- 	<td>${t.date }</td>
+ 	<td>${t.startDate }</td>
  	<td>
  	<a  class="btn btn-success btn-lg" href="${pageContext.request.contextPath}/todo/edit/${t.id}" >Edit</a>
   	<a class="btn btn-danger btn-lg"  href="${pageContext.request.contextPath}/todo/delete/${t.id}">Delete</a>

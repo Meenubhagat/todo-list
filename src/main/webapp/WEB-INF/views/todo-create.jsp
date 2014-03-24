@@ -53,9 +53,9 @@
   	<div class="form-group">
     	<label for="priority" class="col-sm-2 control-label">Task Priority</label>
     		<div class="col-xs-4">
-    			 <select class="form-control" id="priority" name="task_priority">
+    			 <select class="form-control" id="priority" name="task_priority" value="priority">
    					<option>Select Priority</option>  
-    					<option<c:if test="${todo.priority.equals(\"High\")}">selected
+    					<option <c:if test="${todo.priority.equals(\"High\")}">selected
    	 							</c:if>>High</option>
   
  					 <option <c:if test="${todo.priority.equals(\"Medium\")}">selected
@@ -68,8 +68,8 @@
     </div><br>
     <div class="form-group">
      	<label for="date" class="col-sm-2 control-label">Date</label>
-  		  <input type="date" id="date" name="date" ></input>
-    		${todo.date}
+  		  <input type="date" id="date" name="start_date" value="${todo.startDate}"></input>
+    		
     </div>
     
     <div class="col-xs-4">
