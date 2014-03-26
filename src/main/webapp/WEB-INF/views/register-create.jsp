@@ -12,7 +12,7 @@
    <body style="margin:0;">
    
 	<form class="form-horizontal" method="post" action="/todolist/register/save">
-	<input type="hidden" name="registerId" value="${register.id}">
+	<input type="text" name="id" value="${register.id}">
 	 <fieldset>  
       <h1 style="margin:20px;padding:10px;background-color:pink;color:black;">Registration Form</h1><br>
       <div class="container">
@@ -64,7 +64,7 @@
   	     <option <c:if test="${register.country.equals(\"Australia\")}">selected
   	     </c:if>>Australia</option>
   	     
-   	     <option <c:if test="${register.country.equals(\"Singapore\")}">
+   	     <option <c:if test="${register.country.equals(\"Singapore\")}">selected
    	     </c:if>>Singapore</option>
 	    </select>
   	   </div>
@@ -146,7 +146,7 @@
    <div class="form-group">
   	 <label  class="col-sm-2 control-label">Relationship Status</label>
   	   <div class="col-xs-4">
-  	    <select class="form-control" id="relationshipstatus" name="relationshipstatus">
+  	    <select class="form-control" id="relationshipstatus" name="status">
   	     <option>Select Status</option>
   	     <option <c:if test="${register.status.equals(\"Single\")}">selected
   	     </c:if>>Single</option>
@@ -164,7 +164,7 @@
   	 <div class="form-group">
   	 <label class="col-sm-2 control-label">Field of Study</label>
   	   <div class="col-xs-4">
-  	    <select class="form-control" id="studyfield" name="studyfield">
+  	    <select class="form-control" id="field" name="field">
   	     <option>Select Field</option>
   	     <option <c:if test="${register.field.equals(\"Computer\")}">selected
   	     </c:if>>Computer</option>
@@ -185,21 +185,21 @@
     			<div class="col-xs-4">
       				<div class="radio">
   			<label>
-   		<input type="radio" value="Free" checked id="user_status" name="user_status"
+   		<input type="radio" value="Free" checked id="user_status" name="plan"
    		<c:if test="${register.plan.equals(\"Free\")}">selected
    		</c:if>>Free
   			</label>
 					</div>
 	<div class="radio">
  	 <label>
-    	<input type="radio" value="Silver" checked id="user_status" name="user_status"
+    	<input type="radio" value="Silver" checked id="user_status" name="plan"
     	<c:if test="${register.plan.equals(\"Silver\")}">selected
     	</c:if>>Silver
    	 </label>
 	</div>
 	<div class="radio">
  	 <label>
-    	<input type="radio" value="Gold" checked id="user_status" name="user_status"
+    	<input type="radio" value="Gold" checked id="user_status" name="plan"
     	<c:if test="${register.plan.equals(\"Gold\")}">selected
     	
     	</c:if>>Gold
@@ -214,18 +214,18 @@
                <div class="col-lg-6">
                   <div class="input-group">
                    <span class="input-group">
-            		<input type="checkbox" name="things" value="phone"
-            		<c:if test="${register.things.equals(\"Phone\")}">checked
-            		</c:if>>Phone
-       				 <input type="checkbox" name="things" value="automotive"
-       				 <c:if test="${register.things.equals(\"Automotive\")}">checked
-       				 </c:if>>Automotive
-      				  <input type="checkbox" name="things" value="computer"
-      				  <c:if test="${register.things.equals(\"Computer\")}">checked
+                   ${register.haveAutomobile}
+            		<input type="checkbox" name="haveAutomobile" value="true"<c:if test="${register.haveAutomobile == true}">checked
+            		</c:if>>Automobile
+            		${register.havePhone}
+       				 <input type="checkbox" name="havePhone" value="true"<c:if test="${register.havePhone == true}">checked
+       				 </c:if>>Phone
+       				 ${register.haveComputer}
+      				  <input type="checkbox" name="haveComputer" value="true"<c:if test="${register.haveComputer == true}">checked
       				  </c:if>>Computer
-        				<input type="checkbox" name="things" value="tablet"
-        				<c:if test="${regiater.things.equals(\"Tablet\")}">checked
-        				</c:if>>Tablet
+      				  ${register.haveTablet}
+        				<input type="checkbox" name="haveTablet" value="true"<c:if test="${register.haveTablet == true}">checked
+        			    </c:if>>Tablet
       				</span>
       
     				</div><!-- /input-group -->
@@ -233,20 +233,20 @@
   				</div>
         </div>
  
-        <div class="form-group">
-  	 <label  class="col-sm-2 control-label">Education Level</label>
-  	   <div class="col-xs-4">
-  	    <select class="form-control" id="studyfield" name="educationlevel">
+      <div class="form-group">
+  	  <label  class="col-sm-2 control-label">Education Level</label>
+  	  <div class="col-xs-4">
+  	    <select class="form-control" id="level" name="level">
   	     <option value="">Select Level</option>
-  	     <option value="Secondary" <c:if test="${register.educationlevel.equals(\"Secondary\")}">selected
+  	     <option value="Secondary" <c:if test="${register.level.equals(\"Secondary\")}">selected
   	     </c:if>>Secondary</option>
-  	     <option value="High Secondary" <c:if test="${register.educationlevel.equals(\"High Secondary\")}">selected
+  	     <option value="High Secondary" <c:if test="${register.level.equals(\"High Secondary\")}">selected
   	     </c:if>>High Secondary</option>
-  	     <option value="Graduation" <c:if test="${register.educationlevel.equals(\"Graduation\")}">selected
+  	     <option value="Graduation" <c:if test="${register.level.equals(\"Graduation\")}">selected
   	     </c:if>>Graduation</option>
-   	     <option value="Post Graduation" <c:if test="${register.educationlevel.equals(\"Post Graduation\")}">selected
+   	     <option value="Post Graduation" <c:if test="${register.level.equals(\"Post Graduation\")}">selected
    	     </c:if>>Post Graduation</option>
-   	     <option value="Phd" <c:if test="${register.educationlevel.equals(\"Phd\")}">selected
+   	     <option value="Phd" <c:if test="${register.level.equals(\"Phd\")}">selected
    	     </c:if>>Phd.</option>
 	    </select>
   	   </div>

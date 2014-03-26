@@ -89,6 +89,18 @@ public class Register {
 	@Column(name="things")
 	public String things;
 	
+	@Column(name="Phone")
+	public boolean havePhone = false;
+	
+	@Column(name="Computer")
+	public boolean haveComputer = false;
+	
+	@Column(name="Automobile")
+	public boolean haveAutomobile = false;
+	
+	@Column(name="Tablet")
+	public boolean haveTablet = false;
+	
 	@Column(name="education_level")
 	public String educationlevel;
 
@@ -216,6 +228,40 @@ public class Register {
 
 	public String getEducationlevel() {
 		return educationlevel;
+	}
+	
+	
+
+	public boolean isHavePhone() {
+		return havePhone;
+	}
+
+	public void setHavePhone(boolean havePhone) {
+		this.havePhone = havePhone;
+	}
+
+	public boolean isHaveComputer() {
+		return haveComputer;
+	}
+
+	public void setHaveComputer(boolean haveComputer) {
+		this.haveComputer = haveComputer;
+	}
+
+	public boolean isHaveAutomobile() {
+		return haveAutomobile;
+	}
+
+	public void setHaveAutomobile(boolean haveAutomobile) {
+		this.haveAutomobile = haveAutomobile;
+	}
+
+	public boolean isHaveTablet() {
+		return haveTablet;
+	}
+
+	public void setHaveTablet(boolean haveTablet) {
+		this.haveTablet = haveTablet;
 	}
 
 	public void setEducationlevel(String educationlevel) {
